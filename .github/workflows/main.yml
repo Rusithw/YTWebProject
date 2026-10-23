@@ -19,7 +19,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 52.62.86.173
-          username: ubuntu
+          username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
           target: "/www/wwwroot/rusithtest.run.place/"
@@ -30,7 +30,7 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: 52.62.86.173
-          username: ubuntu
+          username: root
           key: ${{ secrets.SECRETRUSITH }}
           script: |
             echo "Deployment completed."
