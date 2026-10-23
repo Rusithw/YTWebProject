@@ -105,10 +105,12 @@ body {
   text-align: center;
 }
 
-.about-link{
+.about-link a{
   color: green;
+  text-decoration: none;
 }
 
-.index-link{
+.index-link a{
    color: green;
+   text-decoration: none;
 }
