@@ -31,7 +31,7 @@ jobs:
         with:
           host: 52.62.86.173
           username: root
-          key: ${{ secrets.SECRETRUSITH }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "Deployment completed."
             ls -la /www/wwwroot/rusithtest.run.place/
