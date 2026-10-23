@@ -1,0 +1,37 @@
+
+name: Deploy Website to Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Copy All Files and Folders Through SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 52.62.86.173
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: "/www/wwwroot/rusithtest.run.place/"
+          rm: false
+          overwrite: true
+
+      - name: Verify Deployment
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 52.62.86.173
+          username: ubuntu
+          key: ${{ secrets.SECRETRUSITH }}
+          script: |
+            echo "Deployment completed."
+            ls -la /www/wwwroot/rusithtest.run.place/
