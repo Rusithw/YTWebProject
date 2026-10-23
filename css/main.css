@@ -104,3 +104,11 @@ body {
   opacity: 1;
   text-align: center;
 }
+
+.about-link{
+  color: green;
+}
+
+.index-link{
+   color: green;
+}
